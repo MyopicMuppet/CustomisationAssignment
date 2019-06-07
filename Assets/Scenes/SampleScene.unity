@@ -9387,6 +9387,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 8578064489879469632, guid: 21f97653f6a42c847b6508100b472031,
+        type: 3}
+      propertyPath: characterName
+      value: 
+      objectReference: {fileID: 1277985223}
+    - target: {fileID: 8578064489879469632, guid: 21f97653f6a42c847b6508100b472031,
+        type: 3}
+      propertyPath: cClass
+      value: 
+      objectReference: {fileID: 370471887}
+    - target: {fileID: 8578064489879469632, guid: 21f97653f6a42c847b6508100b472031,
+        type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6143780632341562388, guid: 21f97653f6a42c847b6508100b472031,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9440,21 +9455,6 @@ PrefabInstance:
     - target: {fileID: 6143780632341562388, guid: 21f97653f6a42c847b6508100b472031,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578064489879469632, guid: 21f97653f6a42c847b6508100b472031,
-        type: 3}
-      propertyPath: characterName
-      value: 
-      objectReference: {fileID: 1277985223}
-    - target: {fileID: 8578064489879469632, guid: 21f97653f6a42c847b6508100b472031,
-        type: 3}
-      propertyPath: cClass
-      value: 
-      objectReference: {fileID: 370471887}
-    - target: {fileID: 8578064489879469632, guid: 21f97653f6a42c847b6508100b472031,
-        type: 3}
-      propertyPath: characterClass
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

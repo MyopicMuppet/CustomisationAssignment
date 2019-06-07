@@ -128,6 +128,8 @@ public class CustomisationSet : MonoBehaviour
         SetTexture("Mouth", mouthIndex = 0);
         SetTexture("Clothes", clothesIndex = 0);
 
+        ChooseClass(selectedIndex);
+
 
     }
 
@@ -316,6 +318,8 @@ public class CustomisationSet : MonoBehaviour
         SetTexture("Mouth", UnityEngine.Random.Range(0, mouthMax - 1));
         SetTexture("Clothes", UnityEngine.Random.Range(0, clothesMax - 1));
     }
+
+    
 
 
     #endregion
