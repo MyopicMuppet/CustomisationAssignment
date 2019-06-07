@@ -50,6 +50,7 @@ public class CustomisationSet : MonoBehaviour
 
     public InputField characterName;
     public Dropdown cClass;
+    public Text className;
     
     // Start is called before the first frame update
     void Start()
@@ -456,7 +457,7 @@ public class CustomisationSet : MonoBehaviour
     public void ClassButton(int index)
     {
         /*CharacterClass names = (CharacterClass)index;
-        cClass = CharacterClass.cClass;*/
+        className.text = name.ToString();*/
     }
 }
 
