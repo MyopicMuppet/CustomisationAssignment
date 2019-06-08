@@ -77,7 +77,7 @@ public class CustomisationSet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -85,9 +85,14 @@ public class CustomisationSet : MonoBehaviour
         List<string> names = new List<string>(enumNames);
         cClass.AddOptions(names);
 
-       
 
-        
+        tempStats[0] = 0;
+        tempStats[1] = 0;
+        tempStats[2] = 0;
+        tempStats[3] = 0;
+        tempStats[4] = 0;
+        tempStats[5] = 0;
+
 
 
         statArray = new string[] { "Strength", "Dexterity", "Constitution", "Wisdom", "Intelligence", "Charisma" };
@@ -159,7 +164,7 @@ public class CustomisationSet : MonoBehaviour
 
         ChooseClass(selectedIndex);
 
-        
+
 
 
     }
@@ -273,25 +278,81 @@ public class CustomisationSet : MonoBehaviour
         charisma.text = statArray[5] + " " + (stats[5] + tempStats[5]);
 
 
-        if (points < 10)
+
+        if (points < 10 && tempStats[0] > 0)
         {
             strDn.interactable = true;
-            dexDn.interactable = true;
-            conDn.interactable = true;
-            wisDn.interactable = true;
-            intDn.interactable = true;
-            chrDn.interactable = true;
+
         }
 
-        if (points >= 10)
+        if (points < 10 && tempStats[1] > 0)
+        {
+            dexDn.interactable = true;
+
+        }
+
+        if (points < 10 && tempStats[2] > 0)
+        {
+            conDn.interactable = true;
+
+        }
+
+        if (points < 10 && tempStats[3] > 0)
+        {
+            wisDn.interactable = true;
+
+        }
+
+        if (points < 10 && tempStats[4] > 0)
+        {
+            intDn.interactable = true;
+
+        }
+
+        if (points < 10 && tempStats[5] > 0)
+        {
+            chrDn.interactable = true;
+
+        }
+
+
+        if (tempStats[0] < 1 && points >= 10)
         {
             strDn.interactable = false;
-            dexDn.interactable = false;
-            conDn.interactable = false;
-            wisDn.interactable = false;
-            intDn.interactable = false;
-            chrDn.interactable = false;
+
         }
+
+        if (tempStats[1] < 1 && points >= 10)
+        {
+            dexDn.interactable = false;
+
+        }
+
+        if (tempStats[2] < 1 && points >= 10)
+        {
+            conDn.interactable = false;
+
+        }
+
+        if (tempStats[3] < 1 && points >= 10)
+        {
+            wisDn.interactable = false;
+
+        }
+
+        if (tempStats[4] < 1 && points >= 10)
+        {
+            intDn.interactable = false;
+
+        }
+
+        if (tempStats[5] < 1 && points >= 10)
+        {
+            chrDn.interactable = false;
+
+        }
+
+
 
         if (points <= 0)
         {
@@ -303,7 +364,7 @@ public class CustomisationSet : MonoBehaviour
             chrUp.interactable = false;
 
         }
-        if(points > 0)
+        if (points > 0)
         {
             strUp.interactable = true;
             dexUp.interactable = true;
@@ -312,7 +373,9 @@ public class CustomisationSet : MonoBehaviour
             intUp.interactable = true;
             chrUp.interactable = true;
         }
+
     }
+
 
     void Save()
     {
@@ -403,7 +466,7 @@ public class CustomisationSet : MonoBehaviour
         SetTexture("Clothes", UnityEngine.Random.Range(0, clothesMax - 1));
     }
 
-    
+
 
 
     #endregion
@@ -558,9 +621,14 @@ public class CustomisationSet : MonoBehaviour
 
     public void StrengthDownButton()
     {
-        points++;
-        tempStats[0]--;
+        if (tempStats[0] > 0)
+        {
+            points++;
+            tempStats[0]--;
+        }
+        strDn.interactable = false;
     }
+
 
     public void DexUpButton()
     {
@@ -570,8 +638,12 @@ public class CustomisationSet : MonoBehaviour
 
     public void DexDownButton()
     {
-        points++;
-        tempStats[1]--;
+        if (tempStats[1] > 0)
+        {
+            points++;
+            tempStats[1]--;
+        }
+        dexDn.interactable = false;
     }
 
     public void ConUpButton()
@@ -582,8 +654,11 @@ public class CustomisationSet : MonoBehaviour
 
     public void ConDownButton()
     {
-        points++;
-        tempStats[2]--;
+        if (tempStats[2] > 0)        {
+            points++;
+            tempStats[2]--;
+        }
+        conDn.interactable = false;
     }
 
     public void WisUpButton()
@@ -594,8 +669,12 @@ public class CustomisationSet : MonoBehaviour
 
     public void WisDownButton()
     {
-        points++;
-        tempStats[3]--;
+        if (tempStats[3] > 0)
+        {
+            points++;
+            tempStats[3]--;
+        }
+        wisDn.interactable = false;
     }
 
     public void IntUpButton()
@@ -606,8 +685,12 @@ public class CustomisationSet : MonoBehaviour
 
     public void IntDownButton()
     {
-        points++;
-        tempStats[4]--;
+        if (tempStats[4] > 0)
+        {
+            points++;
+            tempStats[4]--;
+        }
+        wisDn.interactable = false;
     }
 
     public void ChrUpButton()
@@ -618,8 +701,12 @@ public class CustomisationSet : MonoBehaviour
 
     public void ChrDownButton()
     {
-        points++;
-        tempStats[5]--;
+        if (tempStats[5] > 0)
+        {
+            points++;
+            tempStats[5]--;
+        }
+        chrDn.interactable = false;
     }
 
     #endregion
