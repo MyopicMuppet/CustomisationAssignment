@@ -43,6 +43,8 @@ public class CustomisationSet : MonoBehaviour
 
     public CharacterClass characterClass = CharacterClass.Barbarian;
     public string[] selectedClass = new string[8];
+    public CharacterRace characterRace = CharacterRace.Human;
+    //public string[] selectedRace = new string[7];
     public int selectedIndex = 0;
     public string[] statName;
     public int[] statData;
@@ -86,17 +88,12 @@ public class CustomisationSet : MonoBehaviour
         cClass.AddOptions(names);
 
 
-        tempStats[0] = 0;
-        tempStats[1] = 0;
-        tempStats[2] = 0;
-        tempStats[3] = 0;
-        tempStats[4] = 0;
-        tempStats[5] = 0;
-
+    
 
 
         statArray = new string[] { "Strength", "Dexterity", "Constitution", "Wisdom", "Intelligence", "Charisma" };
         selectedClass = new string[] { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", };
+        //selectedRace = new string[] { "Human", "Elf", "HalfElf", "Dwarf", "Halfling", "Gnome", "Orc", };
 
 
 
@@ -729,4 +726,15 @@ public enum CharacterClass
     Sorcerer,
     Warlock,
     Wizard,
+}
+
+public enum CharacterRace
+{
+    Human,
+    Elf,
+    HalfElf,
+    Dwarf,
+    Halfling,
+    Gnome,
+    Orc,
 }
